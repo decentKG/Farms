@@ -1,0 +1,369 @@
+/* General Setup and Base Styles */
+:root {
+  --primary-color: #f7d046;
+  --text-dark: #222;
+  --text-light: #fff;
+  --overlay-color: rgba(0, 0, 0, 0.4);
+  --navbar-bg: rgba(255, 255, 255, 0.05); /* Slightly transparent background for the nav links */
+  --navbar-padding: 1rem 3rem;
+  --max-width: 1400px;
+  --desktop-spacing: 20px; /* New variable for spacing on desktop */
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0; 
+    font-family: sans-serif;
+    /* Add padding to the body for the rounded corners to be visible on large screens */
+    padding: var(--desktop-spacing); 
+}
+
+/* --- Hero Section Styles --- */
+.hero {
+  height: 100vh;
+  min-height: 750px; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; 
+  display: flex; 
+  flex-direction: column;
+  
+  /* Apply the requested border-radius */
+  border-radius: 30px; 
+  /* Crucial: Remove margin, it should be contained by the body padding */
+  margin: 0; 
+  /* Hides the overflow caused by the background image extending beyond the rounded corners */
+  overflow: hidden; 
+}
+
+/* Dark Overlay for better text contrast */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+}
+
+/* --- Navbar Styles --- */
+.navbar-container {
+  /* Set a max-width for the content inside the navbar to center it */
+  width: 100%;
+  max-width: var(--max-width); 
+  margin: 0 auto; 
+  padding: var(--navbar-padding);
+  position: relative;
+  z-index: 10; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-main {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar-logo .logo-image {
+    height: 35px; 
+    width: auto;
+}
+
+.navbar-logo .logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  display: block;
+  white-space: nowrap; 
+}
+
+.nav-link:hover{
+    color: var(--primary-color);
+}
+
+.nav-active {
+  color: var(--primary-color);
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white; 
+  border-radius: 5px;
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  margin-top: 10px; 
+  z-index: 20; 
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 20px;
+  text-decoration: none;
+  color: var(--text-dark); 
+  font-size: 0.85rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Navbar Actions (Contact, Search, CTA) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-contact {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  color: var(--text-light);
+  white-space: nowrap; 
+}
+
+.contact-text {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.contact-number {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* --- STYLING FOR THE WHITE CIRCLE SEARCH ICON --- */
+.navbar-search-btn {
+  background-color: var(--text-light); /* White background */
+  border: none;
+  color: var(--text-dark); /* Dark icon color */
+  font-size: 1rem; /* Smaller font size for the icon itself */
+  cursor: pointer;
+  flex-shrink: 0; 
+
+  /* Shape and Size */
+  height: 40px; 
+  width: 40px; 
+  border-radius: 50%; /* Make it a perfect circle */
+  
+  /* Centering the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Added subtle shadow to match the floating look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  
+  transition: background-color 0.3s;
+}
+
+.navbar-search-btn:hover {
+    background-color: #f0f0f0; /* Slight hover effect */
+}
+
+.navbar-cta-btn {
+  text-decoration: none;
+  background: var(--primary-color);
+  color: var(--text-dark);
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0; 
+}
+
+/* --- Hero Content Styles (Title/Text) --- */
+.hero-content-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items:flex-start;
+  justify-content: center;
+  bottom: 30%;
+  left: 10%;
+  max-width: 800px; 
+  color: var(--text-light);
+  z-index: 5;
+  padding: 0 20px; 
+}
+
+.hero-subtitle {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: 1px solid #f1f1f1;
+  margin-bottom: 1rem;
+  background: transparent;
+  color: whitesmoke;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  max-width: 700px;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.hero-text {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 10px; 
+    margin-top: 10px; 
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    max-width: 800px;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: var(--text-light);
+  color: var(--text-dark);
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: var(--primary-color);
+}
+
+
+/* 1. Tablet View (Max-width: 1024px) */
+@media (max-width: 1024px) {
+    .navbar-container {
+        padding: 1rem 2rem;
+    }
+
+    .navbar-contact {
+        display: none; 
+    }
+
+    .navbar-links {
+        padding: 0.5rem 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .hero-title {
+        font-size: 3rem; /* Reduced for tablet view */
+    }
+}
+
+/* 2. Mobile View (Max-width: 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 0; /* Remove padding entirely for mobile */
+    }
+    
+    .hero {
+        border-radius: 0; /* Remove border-radius for full width on mobile */
+        margin: 0; 
+        min-height: 600px; /* Adjusted min-height for smaller screens */
+    }
+
+    /* --- Navbar Adjustments for Mobile --- */
+    .navbar-container {
+        max-width: 100%;
+        padding: 1rem;
+    }
+    
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-actions {
+        gap: 10px;
+    }
+    
+    .navbar-search-btn {
+        height: 35px; 
+        width: 35px;
+        font-size: 0.9rem;
+    }
+
+    .navbar-cta-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* --- Hero Content Adjustments for Mobile --- */
+    .hero-content-container {
+        bottom: 15%;
+        left: 0;
+        padding: 0 20px;
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2rem; /* Further reduced for mobile */
+        letter-spacing: 1px;
+    }
+
+    .hero-text {
+        font-size: 0.9rem;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-btn {
+        padding: 12px 25px;
+    }
+}
