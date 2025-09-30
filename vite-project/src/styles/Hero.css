@@ -4,59 +4,57 @@
   --text-dark: #222;
   --text-light: #fff;
   --overlay-color: rgba(0, 0, 0, 0.4);
-  --navbar-bg: rgba(255, 255, 255, 0.05); /* Slightly transparent background for the nav links */
+  --navbar-bg: rgba(255, 255, 255, 0.05);
   --navbar-padding: 1rem 3rem;
   --max-width: 1400px;
-  --desktop-spacing: 20px; /* New variable for spacing on desktop */
+  --desktop-spacing: 20px;
 }
 
-body {
-    background-color: white;
-    margin: 0;
-    padding: 0; 
-    font-family: sans-serif;
-    /* Add padding to the body for the rounded corners to be visible on large screens */
-    padding: var(--desktop-spacing); 
+/* --- Global CSS Reset --- */
+* {
+  box-sizing: border-box;
 }
 
-/* --- Hero Section Styles --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* --- Hero Section --- */
 .hero {
   height: 100vh;
-  min-height: 750px; 
+  width: 100vw;
+  background-image: url('../src/images/hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative; 
-  display: flex; 
+  position: relative;
+  display: flex;
   flex-direction: column;
-  
-  /* Apply the requested border-radius */
-  border-radius: 30px; 
-  /* Crucial: Remove margin, it should be contained by the body padding */
-  margin: 0; 
-  /* Hides the overflow caused by the background image extending beyond the rounded corners */
-  overflow: hidden; 
+  margin: 0;
 }
 
-/* Dark Overlay for better text contrast */
-.hero-overlay {
+/* Dark Overlay */
+/* .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: var(--overlay-color);
-}
+} */
 
-/* --- Navbar Styles --- */
+/* --- Navbar --- */
 .navbar-container {
-  /* Set a max-width for the content inside the navbar to center it */
   width: 100%;
-  max-width: var(--max-width); 
-  margin: 0 auto; 
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: var(--navbar-padding);
   position: relative;
-  z-index: 10; 
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,14 +67,14 @@ body {
 }
 
 .navbar-logo {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .navbar-logo .logo-image {
-    height: 35px; 
-    width: auto;
+  height: 35px;
+  width: auto;
 }
 
 .navbar-logo .logo-text {
@@ -89,11 +87,9 @@ body {
   list-style: none;
   display: flex;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 1.5rem;
   background-color: transparent;
   border-radius: 50px;
-  padding: 0.5rem 1.5rem;
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .nav-item {
@@ -107,36 +103,36 @@ body {
   font-weight: 500;
   padding: 0.5rem 1rem;
   display: block;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
-.nav-link:hover{
-    color: var(--primary-color);
+.nav-link:hover {
+  color: var(--primary-color);
 }
 
 .nav-active {
   color: var(--primary-color);
 }
 
-/* Dropdown Menu Styling */
+/* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  background: white; 
+  background: white;
   border-radius: 5px;
   min-width: 150px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 10px 0;
-  margin-top: 10px; 
-  z-index: 20; 
+  margin-top: 10px;
+  z-index: 20;
 }
 
 .dropdown-item {
   display: block;
   padding: 8px 20px;
   text-decoration: none;
-  color: var(--text-dark); 
+  color: var(--text-dark);
   font-size: 0.85rem;
 }
 
@@ -144,62 +140,66 @@ body {
   background-color: #f1f1f1;
 }
 
-/* Navbar Actions (Contact, Search, CTA) */
+/* Navbar Actions */
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
 }
 
+/* ✅ Phone Contact Section */
 .navbar-contact {
   display: flex;
-  flex-direction: column;
-  text-align: right;
+  align-items: center;
+  gap: 10px;              /* space between icon and text */
+  margin-right: 20px;     /* push away from search button */
   color: var(--text-light);
-  white-space: nowrap; 
+  white-space: nowrap;
+}
+
+.phone-icon {
+  font-size: 1.2rem;
+  color: gold;            /* gold color */
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 .contact-text {
   font-size: 12px;
   opacity: 0.8;
+  display: block;
 }
 
 .contact-number {
   font-size: 12px;
   font-weight: bold;
+  display: block;
+  color: var(--text-light);
 }
 
-/* --- STYLING FOR THE WHITE CIRCLE SEARCH ICON --- */
+/* Search Button */
 .navbar-search-btn {
-  background-color: var(--text-light); /* White background */
-  border: none;
-  color: var(--text-dark); /* Dark icon color */
-  font-size: 1rem; /* Smaller font size for the icon itself */
+  background: white;
+  border: white;
+  border-radius: 50%;
   cursor: pointer;
-  flex-shrink: 0; 
-
-  /* Shape and Size */
-  height: 40px; 
-  width: 40px; 
-  border-radius: 50%; /* Make it a perfect circle */
-  
-  /* Centering the icon */
+  font-size: 1rem;
+  color: black;
+  padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* Added subtle shadow to match the floating look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  
-  transition: background-color 0.3s;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar-search-btn:hover {
-    background-color: #f0f0f0; /* Slight hover effect */
+  color: #4a90e2;
+  transform: scale(1.1);
 }
 
 .navbar-cta-btn {
   text-decoration: none;
+  border: 1px;
   background: var(--primary-color);
   color: var(--text-dark);
   padding: 12px 25px;
@@ -209,22 +209,22 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
-/* --- Hero Content Styles (Title/Text) --- */
+/* --- Hero Content --- */
 .hero-content-container {
   display: flex;
   flex-direction: column;
   position: absolute;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
-  bottom: 30%;
+  bottom: 15%;
   left: 10%;
-  max-width: 800px; 
+  max-width: 800px;
   color: var(--text-light);
   z-index: 5;
-  padding: 0 20px; 
+  padding: 0 20px;
 }
 
 .hero-subtitle {
@@ -232,11 +232,9 @@ body {
   padding: 5px 15px;
   border-radius: 15px;
   border: 1px solid #f1f1f1;
-  margin-bottom: 1rem;
   background: transparent;
   color: whitesmoke;
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 0.6rem;
   letter-spacing: 1px;
 }
 
@@ -247,17 +245,17 @@ body {
   max-width: 700px;
   line-height: 1.1;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text {
-    border-top: 1px solid #f1f1f1;
-    padding-top: 10px; 
-    margin-top: 10px; 
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-    font-weight: 300;
-    max-width: 800px;
+  border-top: 1px solid #f1f1f1;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  max-width: 800px;
 }
 
 .hero-btn {
@@ -280,90 +278,82 @@ body {
   background-color: var(--primary-color);
 }
 
-
-/* 1. Tablet View (Max-width: 1024px) */
+/* Tablet View */
 @media (max-width: 1024px) {
-    .navbar-container {
-        padding: 1rem 2rem;
-    }
-
-    .navbar-contact {
-        display: none; 
-    }
-
-    .navbar-links {
-        padding: 0.5rem 1rem;
-    }
-
-    .nav-link {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.7rem;
-    }
-
-    .hero-title {
-        font-size: 3rem; /* Reduced for tablet view */
-    }
+  .navbar-container {
+    padding: 1rem 2rem;
+  }
+  .navbar-contact {
+    display: none;
+  }
+  .navbar-links {
+    padding: 0.5rem 1rem;
+  }
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
 }
 
-/* 2. Mobile View (Max-width: 768px) */
+/* Mobile View */
 @media (max-width: 768px) {
-    body {
-        padding: 0; /* Remove padding entirely for mobile */
-    }
-    
-    .hero {
-        border-radius: 0; /* Remove border-radius for full width on mobile */
-        margin: 0; 
-        min-height: 600px; /* Adjusted min-height for smaller screens */
-    }
+  body {
+    padding: 0;
+  }
+  .hero {
+    border-radius: 0;
+    margin: 0;
+    min-height: 600px;
+  }
+  .navbar-container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  .navbar-links {
+    display: none;
+  }
+  .navbar-actions {
+    gap: 10px;
+  }
+  .navbar-search-btn {
+    height: 35px;
+    width: 35px;
+    font-size: 0.9rem;
+  }
+  .navbar-cta-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border: 0px;
+  }
+  .hero-content-container {
+    bottom: 15%;
+    left: 0;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  .hero-text {
+    font-size: 0.9rem;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  .hero-btn {
+    padding: 12px 25px;
+  }
+}
 
-    /* --- Navbar Adjustments for Mobile --- */
-    .navbar-container {
-        max-width: 100%;
-        padding: 1rem;
-    }
-    
-    .navbar-links {
-        display: none;
-    }
-
-    .navbar-actions {
-        gap: 10px;
-    }
-    
-    .navbar-search-btn {
-        height: 35px; 
-        width: 35px;
-        font-size: 0.9rem;
-    }
-
-    .navbar-cta-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-    
-    /* --- Hero Content Adjustments for Mobile --- */
-    .hero-content-container {
-        bottom: 15%;
-        left: 0;
-        padding: 0 20px;
-        width: 100%;
-        box-sizing: border-box;
-        max-width: 100%;
-    }
-
-    .hero-title {
-        font-size: 2rem; /* Further reduced for mobile */
-        letter-spacing: 1px;
-    }
-
-    .hero-text {
-        font-size: 0.9rem;
-        max-width: 100%;
-        margin-bottom: 1rem;
-    }
-    
-    .hero-btn {
-        padding: 12px 25px;
-    }
+.btn-gt {
+  background-color: transparent;
+  border: none;
+  border-color: white;
+  width: 230px;
+  align-content: center;
 }

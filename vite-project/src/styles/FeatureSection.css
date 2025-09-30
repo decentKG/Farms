@@ -1,0 +1,115 @@
+/* Variables for easy theme switching */
+:root {
+  --brand-accent: #f7d046;   /* was --primary-yellow */
+  --text-primary: #333;      /* was --text-dark */
+  --text-secondary: #666;    /* was --text-light */
+  --surface-card: #fff;      /* was --card-bg */
+  --surface-border: #eee;    /* was --border-light */
+  --radius-lg: 20px;         /* was --card-radius */
+}
+
+/* Container */
+.features-section {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Feature Card */
+.feature-card {
+  flex: 1 1 22%;
+  min-width: 250px;
+  padding: 30px 25px;
+  background-color: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Title & Description */
+.feature-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.feature-description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+/* Icon Circle */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: var(--brand-accent);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: #fff; /* White icons inside yellow circle */
+}
+
+/* Decorative Corner Link */
+.feature-link {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feature-link:hover {
+  background-color: #fafafa;
+}
+
+/* Arrow Icon (bottom corner) */
+.arrow-icon::before {
+  content: '➔';
+  font-size: 1rem;
+  color: var(--brand-accent);
+  transform: rotate(-45deg);
+  display: inline-block;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1100px) {
+  .feature-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .features-section {
+    flex-direction: column;
+  }
+  .feature-card {
+    width: 100%;
+  }
+}
