@@ -1,0 +1,30 @@
+/* ProductCategories.css */
+
+.icon-wrapper {
+  width: 70px; /* Size of the circle */
+  height: 70px; /* Size of the circle */
+  border-radius: 50%; /* Makes it a circle */
+  background-color: #d19a0e; /* Light yellow background, similar to your image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevent it from shrinking */
+}
+
+.category-icon {
+  font-size: 30px; /* Size of the icon itself */
+  color: #000000; /* Darker yellow/gold color for the icon */
+}
+
+/* Specific styling for the right-aligned items */
+/* On larger screens, push the icon-wrapper to the right for the right column items */
+@media (min-width: 992px) { /* Adjust breakpoint as needed for 'lg' or 'md' */
+  .col-md-5:last-child .d-flex {
+    flex-direction: row-reverse; /* Swap icon and text order */
+    text-align: right;
+  }
+  .col-md-5:last-child .icon-wrapper {
+    margin-right: 0 !important;
+    margin-left: 1rem !important; /* Adjust margin for spacing */
+  }
+}

@@ -1,0 +1,79 @@
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.keyword-bar-outer {
+  background-color: white; 
+  padding: 15px 0;
+  overflow: hidden; 
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.keyword-bar-inner {
+  display: flex;
+  align-items: center;
+  width: 200%; 
+  animation: scroll-left 40s linear infinite;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.keyword-group {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.keyword-item {
+  color: white; 
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0 28px;
+  text-shadow: 
+    1px 1px 0 #9c9c9c, 
+    -1px -1px 0 #9c9c9c, 
+    1px -1px 0 #9c9c9c, 
+    -1px 1px 0 #9c9c9c; 
+}
+
+/* --- MODIFIED Separator Styling --- */
+.keyword-separator {
+  /* Increased Font Size for visual emphasis */
+  font-size: 58px; 
+  font-weight: bold; 
+  margin-top: -3px; /* Minor adjustment for better visual alignment */
+  color: white; 
+  
+  /* Apply a transparent text fill to make only the stroke visible */
+  -webkit-text-fill-color: transparent; 
+  
+  /* Apply the green stroke */
+  -webkit-text-stroke: 1px #799a63; 
+
+  /* Fallback text-shadow (optional, for broader compatibility with some outlines) */
+  text-shadow: 
+    0 0 1px #799a63, 
+    0 0 1px #799a63;
+}
+/* --- END MODIFIED Separator Styling --- */
+
+
+@media (max-width: 992px) {
+  .keyword-item { font-size: 30px; margin: 0 22px; }
+  /* Match the increased size on medium screens */
+  .keyword-separator { font-size: 40px; } 
+}
+
+@media (max-width: 600px) {
+  .keyword-item { font-size: 22px; margin: 0 16px; }
+  /* Match the increased size on small screens */
+  .keyword-separator { font-size: 32px; } 
+}

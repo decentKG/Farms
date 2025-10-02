@@ -1,0 +1,123 @@
+.timeline-section {
+  background-color: #f6f7f2;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+}
+
+.timeline-subtitle {
+  font-size: 14px;
+  background-color: white;
+  font-weight: 600;
+  color: black; 
+  padding: 4px 10px;
+  border: 1px solid white;
+  display: inline-block;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-header-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #343a40;
+}
+
+.timeline-header-text {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- Timeline Grid and Line --- */
+.timeline-container {
+  display: flex;
+  position: relative;
+  /* Central horizontal line */
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 40px; 
+  margin-top: 50px;
+}
+
+.timeline-item {
+  flex: 1; 
+  padding: 0 15px;
+  /* text-align: center; */
+  text-align: left;
+  position: relative;
+}
+
+/* The vertical placement of the green dot */
+.timeline-line-point {
+  width: 14px;
+  height: 14px;
+  background-color: #799a63;
+  border-radius: 50%;
+  position: absolute;
+  /* Adjusting bottom property to center the 14px dot over the 2px border-bottom */
+  bottom: -8px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2; /* Ensures the dot sits visually above the horizontal line */
+}
+
+.timeline-year {
+  font-size: 60px;
+  font-weight: 800;
+  color: white; 
+  margin-bottom: 30px;
+  
+  /* Outline effect for the year */
+  -webkit-text-stroke: 1px #9c9c9c; 
+  -webkit-text-fill-color: white; 
+  
+  /* Fallback for text-shadow outline */
+  text-shadow: 
+    1px 1px 0 #9c9c9c, 
+    -1px -1px 0 #9c9c9c, 
+    1px -1px 0 #9c9c9c, 
+    -1px 1px 0 #9c9c9c;
+}
+
+.timeline-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 5px;
+  margin-top: 30px; 
+}
+
+.timeline-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .timeline-container {
+    flex-wrap: wrap;
+    border-bottom: none; 
+    padding-bottom: 0;
+  }
+
+  .timeline-item {
+    flex: 0 0 100%; 
+    padding-left: 30px; 
+    text-align: left;
+    margin-bottom: 30px;
+    border-left: 2px solid #e0e0e0; 
+  }
+
+  .timeline-line-point {
+    top: 0;
+    left: 0;
+    bottom: auto;
+    transform: translate(-50%, 50%);
+  }
+
+  .timeline-year {
+    font-size: 40px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+}

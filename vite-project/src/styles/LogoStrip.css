@@ -1,0 +1,80 @@
+.logo-strip-section {
+  background-color: #f6f7f2;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.logo-strip-outer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.logo-strip-inner {
+  display: flex;
+  width: max-content; /* Contents determine width */
+  animation: scroll-left 24s linear infinite;
+  align-items: center;
+  gap: 30px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-item {
+  flex-shrink: 0;
+  width: 150px;
+  text-align: center;
+  position: relative;
+}
+
+/* LOGO IMAGE STYLES */
+.logo-item img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s, transform 0.3s;
+  /* Animation for bounce on hover */
+}
+
+/* Make the whole strip pause when hovering a logo and make that logo bounce */
+.logo-item:hover img {
+  opacity: 1;
+  animation: bounce 0.6s;
+}
+
+.logo-strip-inner:hover {
+  animation-play-state: paused;
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  20% { transform: scale(1.15, 0.85); }
+  50% { transform: scale(0.95, 1.05); }
+  70% { transform: scale(1.05, 0.95); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 992px) {
+  .logo-item {
+    width: 120px;
+  }
+  .logo-strip-inner {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-item {
+    width: 100px;
+  }
+  .logo-strip-inner {
+    gap: 15px;
+  }
+}

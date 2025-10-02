@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@400;500;600;700&display=swap');
 
 body {
-  font-family: 'Signika', sans-serif;
+  font-family: 'Signika', sans-serif !important;
   margin: 0;
   padding: 0;
 }
+
+/* .navbar-links li{
+  color: white !important;
+} */
+
+/* .hero-content-container {
+    margin-left: 50px;
+  
+} */

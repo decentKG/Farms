@@ -1,0 +1,190 @@
+.services-section {
+  background: #5b8d4e; /* green backdrop similar to mock */
+  padding: 70px 140px 120px; /* much larger horizontal padding */
+  position: relative;
+  font-family: inherit;
+}
+
+/* Ensure all text inside the section uses the global font from index.css */
+.services-section * {
+  font-family: inherit;
+}
+
+/* Subtle crops pattern overlay at the bottom of the green background */
+.services-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 220px; /* make the pattern area taller for visibility */
+  background-image: url('../images/cardbg.png');
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: auto 220px; /* scale pattern to the band height */
+  opacity: 0.65; /* slightly more visible */
+  pointer-events: none; /* keep UI interactive */
+  z-index: 1; /* raise above section content if needed */
+}
+
+/* Header: badge, title, nav */
+.services-header {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.services-badge {
+  display: inline-block;
+  grid-column: 1 / 2;
+  justify-self: start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f5f7f1;
+  color: #4b5b46;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.services-title {
+  grid-column: 1 / 2;
+  justify-self: start;
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.services-nav {
+  grid-column: 2 / 3;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  height: 36px;
+  width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-btn:hover { background: rgba(255,255,255,0.12); }
+
+.services-container {
+  max-width: 1100px; /* slightly narrower to sit more centered */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+/* Responsive paddings so sides aren't too tight on small screens */
+@media (max-width: 992px) {
+  .services-section { padding-left: 72px; padding-right: 72px; }
+}
+
+@media (max-width: 600px) {
+  .services-section { padding-left: 28px; padding-right: 28px; }
+}
+
+.service-card {
+  position: relative;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.service-image-wrap {
+  padding: 16px 16px 0;
+}
+
+.service-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+.service-content {
+  padding: 16px 20px 24px;
+  text-align: left;
+}
+
+.service-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffb400;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+}
+
+.service-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 6px 0 10px;
+  color: #2c2c2c;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Corner circular button overlapping bottom-right */
+.service-corner-btn {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f7d046;
+  color: #333;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .services-container {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -21,6 +21,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  
 }
 
 /* --- Hero Section --- */
@@ -35,6 +36,7 @@ html, body {
   display: flex;
   flex-direction: column;
   margin: 0;
+  
 }
 
 /* Dark Overlay */
@@ -98,20 +100,27 @@ html, body {
 
 .nav-link {
   text-decoration: none;
-  color: var(--text-light);
-  font-size: 12px;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  display: block;
-  white-space: nowrap;
+  color: var(--text-light) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+  display: block !important;
+  white-space: nowrap !important;
+  transition: 0.3s ease !important;
+
+  span{
+    color: var(--primary-color);
+  }
 }
 
+
+
 .nav-link:hover {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 .nav-active {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 /* Dropdown Menu */
@@ -220,7 +229,7 @@ html, body {
   align-items: flex-start;
   justify-content: center;
   bottom: 15%;
-  left: 10%;
+  left: 15%;
   max-width: 800px;
   color: var(--text-light);
   z-index: 5;
@@ -229,6 +238,7 @@ html, body {
 
 .hero-subtitle {
   display: inline-block;
+  margin-bottom: 20px;
   padding: 5px 15px;
   border-radius: 15px;
   border: 1px solid #f1f1f1;
@@ -239,13 +249,13 @@ html, body {
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  max-width: 700px;
-  line-height: 1.1;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 4.2rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 3px !important;
+  max-width: 700px !important;
+  line-height: 1.1 !important;
+  margin-bottom: 1rem !important;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5) !important;
 }
 
 .hero-text {

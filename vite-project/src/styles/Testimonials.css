@@ -1,0 +1,138 @@
+.testimonials-section {
+  background-color: #f6f7f2;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 0 15px; /* Add some padding to match container */
+}
+
+.testimonial-subtitle {
+    background-color: white;
+  font-size: 14px;
+  font-weight: 600;
+  color: black; /* Light green subtitle color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  /* border: 1px solid #e0e0e0; */
+  display: inline-block;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #343a40;
+}
+
+.navigation-buttons {
+  display: flex;
+}
+
+.nav-btn {
+  background-color: transparent;
+  border: 1px solid #dcdcdc;
+  color: #343a40;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.nav-btn:hover {
+  background-color: #799a63;
+  color: white;
+  border-color: #799a63;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  height: 100%; /* Ensures cards have equal height in the grid */
+}
+
+.quote-icon-container {
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1;
+  color: #f7e09f; /* Light yellow/gold color */
+  z-index: 10;
+}
+
+.rating-stars {
+  margin-bottom: 15px;
+}
+
+.star-icon {
+  color: gold; /* Classic gold color for stars */
+  font-size: 18px;
+  margin-right: 2px;
+}
+
+.testimonial-quote {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.client-image-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.client-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.client-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 0;
+}
+
+.client-title {
+  font-size: 13px;
+  color: #343a40;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .testimonial-title {
+    font-size: 32px;
+  }
+}

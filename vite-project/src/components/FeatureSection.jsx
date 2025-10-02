@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
+import "../index.css";
 import { FaTractor, FaLeaf, FaSeedling, FaCheckCircle } from "react-icons/fa"; 
-import "../styles/FeatureSection.css";
+import '../styles/FeatureSection.css'; 
 
-// Feature Data with React Icons
+
 const features = [
   {
     id: 1,
@@ -39,13 +40,19 @@ const FeaturesSection = () => {
     <section className="features-section">
       {features.map((feature) => (
         <div className="feature-card" key={feature.id}>
-          {/* Icon Circle */}
-          <div className="icon-circle">
-            <span className="icon">{feature.icon}</span>
+          
+          {/* === CHANGE START: New Header Wrapper for Flex Layout === */}
+          <div className="card-header">
+            {/* Icon Circle */}
+            <div className="icon-circle">
+              <span className="icon">{feature.icon}</span>
+            </div>
+            {/* Title */}
+            <h3 className="feature-title">{feature.title}</h3>
           </div>
+          {/* === CHANGE END === */}
 
           {/* Content */}
-          <h3 className="feature-title">{feature.title}</h3>
           <p className="feature-description">{feature.description}</p>
 
           {/* Decorative Corner/Link */}

@@ -1,14 +1,15 @@
-/* Variables for easy theme switching */
+/* Variables for easy theme switching - New Unique Naming Convention */
 :root {
-  --brand-accent: #f7d046;   /* was --primary-yellow */
-  --text-primary: #333;      /* was --text-dark */
-  --text-secondary: #666;    /* was --text-light */
-  --surface-card: #fff;      /* was --card-bg */
-  --surface-border: #eee;    /* was --border-light */
-  --radius-lg: 20px;         /* was --card-radius */
+  /* Unique Names for the Feature Section */
+  --feature-color-accent: #f7d046; /* Brand Accent */
+  --feature-text-main: #333;       /* Primary Text Color */
+  --feature-text-muted: #666;      /* Secondary Text Color */
+  --feature-surface-bg: #fff;      /* Card Background */
+  --feature-border-line: #eee;     /* Border Color */
+  --feature-border-radius: 20px;   /* Card Radius */
 }
 
-/* Container */
+/* 1. Features Container */
 .features-section {
   display: flex;
   gap: 20px;
@@ -19,86 +20,107 @@
   justify-content: center;
 }
 
-/* Feature Card */
+/* 2. Feature Card */
 .feature-card {
-  flex: 1 1 22%;
+  flex: 1 1 23.5%;
   min-width: 250px;
-  padding: 30px 25px;
-  background-color: var(--surface-card);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-lg);
+  padding: 25px 25px;
+  /* Using new unique variable names */
+  background-color: var(--feature-surface-bg);
+  border: 1px solid var(--feature-border-line);
+  border-radius: var(--feature-border-radius);
   position: relative;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
+/* Header Container for Icon and Title */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* 3. Icon Circle */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  /* Using new unique variable name */
+  background-color: var(--feature-color-accent);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+/* Style for React Icons (SVGs) */
+.icon-circle .icon svg {
+  color: #000;
+  font-size: 1.8rem;
+}
+
 /* Title & Description */
 .feature-title {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  color: var(--text-primary);
+  margin: 0;
+  /* Using new unique variable name */
+  color: var(--feature-text-main);
 }
 
 .feature-description {
   font-size: 0.85rem;
   line-height: 1.6;
-  color: var(--text-secondary);
-  margin-bottom: 40px;
+  /* Using new unique variable name */
+  color: var(--feature-text-muted);
+  margin-bottom: 25px;
+  flex-grow: 1;
 }
 
-/* Icon Circle */
-.icon-circle {
-  width: 60px;
-  height: 60px;
-  background-color: var(--brand-accent);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.icon {
-  font-size: 1.5rem;
-  color: #fff; /* White icons inside yellow circle */
-}
-
-/* Decorative Corner Link */
+/* 4. Decorative Corner Link/Tab (the circle that wraps the arrow) */
 .feature-link {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
+  bottom: -5px;
+  right: -5px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
-  background-color: var(--surface-card);
-  border: 1px solid var(--surface-border);
+  /* Using new unique variable names */
+  background-color: var(--feature-surface-bg);
+  border: 5px solid var(--feature-border-line);
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .feature-link:hover {
   background-color: #fafafa;
 }
 
-/* Arrow Icon (bottom corner) */
+/* Arrow Icon inside the tab */
 .arrow-icon::before {
   content: '➔';
   font-size: 1rem;
-  color: var(--brand-accent);
+  /* Using new unique variable name */
+  color: var(--feature-color-accent);
+  position: relative;
+  top: 0;
+  left: 0;
   transform: rotate(-45deg);
   display: inline-block;
 }
 
-/* --- Responsive --- */
+/* --- Responsive Layout --- */
 @media (max-width: 1100px) {
   .feature-card {
     flex: 1 1 calc(50% - 20px);
