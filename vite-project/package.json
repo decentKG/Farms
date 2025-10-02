@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "react": "^19.1.1",
+    "react-icons": "^5.x.x",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
